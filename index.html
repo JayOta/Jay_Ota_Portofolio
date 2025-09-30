@@ -8,10 +8,13 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- HEADER -->
     <header>
       <h1>João Otávio</h1>
       <nav>
@@ -22,7 +25,6 @@
       </nav>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
       <h2>Olá, eu sou o João Otávio 👋</h2>
       <p class="typing">
@@ -30,22 +32,41 @@
       </p>
     </section>
 
-    <!-- SOBRE -->
     <section id="sobre">
       <h2>Sobre mim</h2>
-      <p>
-        Tenho 17 anos e estou no terceiro ano do Ensino Médio Sesc/Senac com
-        Técnico em Informática para Internet. Tenho interesse em estágio na área
-        de T.I, gosto de tudo que faça parte deste campo, e estou sempre
-        procurando aprender novas tecnologias e habilidades para me tornar um
-        ótimo profissional. Há 2 anos comecei a estudar programação e hoje busco
-        atuar em áreas que se encaixam com meu conhecimento: Front-end,
-        Back-end, Full-Stack ou Mobile. Atualmente, conheço mais sobre o
-        Back-end (APIs, CRUD, MVC).
-      </p>
+      <div class="about-content">
+        <div class="profile-card">
+          <img
+            src="eu.jfif"
+            alt="Foto de Perfil de João Otávio"
+            class="profile-pic"
+          />
+          <div class="social-links">
+            <a href="https://github.com/JayOta" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/jayota/" target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="mailto:otavio.cvilela@gmail.com"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+
+        <p class="about-text">
+          Tenho 17 anos e estou no terceiro ano do Ensino Médio Sesc/Senac com
+          Técnico em Informática para Internet. Tenho interesse em estágio na
+          área de T.I, gosto de tudo que faça parte deste campo, e estou sempre
+          procurando aprender novas tecnologias e habilidades para me tornar um
+          ótimo profissional. Há 2 anos comecei a estudar programação e hoje
+          busco atuar em áreas que se encaixam com meu conhecimento: Front-end,
+          Back-end, Full-Stack ou Mobile. Atualmente, conheço mais sobre o
+          Back-end (APIs, CRUD, MVC).
+        </p>
+      </div>
     </section>
 
-    <!-- SKILLS -->
     <section id="skills">
       <h2>Conhecimentos</h2>
       <div class="skills">
@@ -109,22 +130,79 @@
       </div>
     </section>
 
-    <!-- PROJETOS -->
     <section id="projetos">
-      <h2>Projetos</h2>
+      <h2>Projetos Destacados</h2>
       <div class="projetos">
-        <div class="card">
+        <div class="card project-card">
+          <img
+            src="project1.png"
+            alt="PI-Volleyball-Center"
+            class="project-preview"
+          />
+          <div class="card-info">
+            <h3>Volleyball Center</h3>
+            <p>
+              Site de vôlei do Paraná: dicas para iniciantes, notícias e
+              conteúdos dinâmicos para quem quer aprender e se aprofundar no
+              esporte.
+            </p>
+            <div class="project-tags">
+              <span class="tag">PHP</span><span class="tag">JS</span>
+              <span class="tag">MySQL</span><span class="tag">API</span
+              ><span class="tag">HTML</span><span class="tag">CSS</span>
+              <span class="tag">BOOTSTRAP</span>
+            </div>
+            <a
+              href="https://volleyballcenter.infinityfreeapp.com/Routes/index.php"
+              target="_blank"
+              class="live-btn"
+              >Ver Site <i class="fas fa-external-link-alt"></i
+            ></a>
+            <a
+              href="https://github.com/JayOta/PI-Volleyball-Center"
+              target="_blank"
+              >Repositório <i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <img src="project2.png" alt="Tente Clicar" class="project-preview" />
+          <div class="card-info">
+            <h3>Tente Clicar (Jogo)</h3>
+            <p>
+              Tente acertar a bolinha e com o tempo ela irá aumentar de
+              tamanho!!
+            </p>
+            <div class="project-tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span
+              ><span class="tag">JavaScript</span><span class="tag">DOM</span>
+            </div>
+            <a
+              href="https://jayota.github.io/tente_clicar/"
+              target="_blank"
+              class="live-btn"
+              >Ver Site <i class="fas fa-external-link-alt"></i
+            ></a>
+            <a href="https://github.com/JayOta/tente_clicar" target="_blank"
+              >Repositório <i class="fab fa-github"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="card project-card github-link-card">
           <h3>Meus Projetos no GitHub</h3>
           <p>
-            Confira meus repositórios públicos e alguns projetos pessoais que
-            desenvolvi.
+            Confira todos os meus repositórios públicos, incluindo os projetos
+            acima e outros experimentos.
           </p>
-          <a href="https://github.com/JayOta" target="_blank">Visitar GitHub</a>
+          <a href="https://github.com/JayOta" target="_blank"
+            >Visitar GitHub <i class="fab fa-github"></i
+          ></a>
         </div>
       </div>
     </section>
 
-    <!-- CONTATO -->
     <section id="contato">
       <h2>Contato</h2>
       <div class="contato">
@@ -145,7 +223,6 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
       <p>© 2025 João Otávio - Todos os direitos reservados</p>
     </footer>

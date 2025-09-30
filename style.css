@@ -6,10 +6,18 @@
 }
 body {
   font-family: "Poppins", sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #0f172a; /* Azul marinho escuro */
+  color: #e2e8f0; /* Branco suave */
   line-height: 1.6;
   scroll-behavior: smooth;
+}
+
+/* Variáveis para fácil alteração */
+:root {
+  --primary-color: #38bdf8; /* Azul Neon (Sky) */
+  --background-dark: #0f172a;
+  --card-background: #1e293b;
+  --text-light: #e2e8f0;
 }
 
 /* ===== HEADER ===== */
@@ -28,20 +36,20 @@ header {
 }
 header h1 {
   font-weight: 600;
-  color: #38bdf8;
+  color: var(--primary-color);
 }
 nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #e2e8f0;
+  color: var(--text-light);
   font-weight: 500;
   transition: color 0.3s;
 }
 nav a:hover {
-  color: #38bdf8;
+  color: var(--primary-color);
 }
 
-/* ===== HERO ===== */
+/* ===== HERO (Sem alterações) ===== */
 .hero {
   height: 100vh;
   display: flex;
@@ -57,7 +65,7 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 .typing {
-  border-right: 3px solid #38bdf8;
+  border-right: 3px solid var(--primary-color);
   white-space: nowrap;
   overflow: hidden;
   width: 0;
@@ -98,20 +106,62 @@ h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #38bdf8;
+  color: var(--primary-color);
 }
 
-/* ===== SOBRE ===== */
+/* ===== SOBRE (Com Foto) ===== */
 #sobre {
+  /* Altera o alinhamento para o grid/flexbox */
+  text-align: left;
+}
+.about-content {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start; /* Alinha o texto ao topo da foto */
+  margin-top: 2rem;
+}
+
+.profile-card {
+  flex-shrink: 0; /* Impede que a foto encolha */
   text-align: center;
 }
-#sobre p {
-  max-width: 800px;
-  margin: auto;
-  margin-top: 1rem;
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--primary-color); /* Borda chamativa */
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+  transition: transform 0.3s;
 }
 
-/* ===== SKILLS ===== */
+.profile-pic:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.social-links {
+  margin-top: 15px;
+}
+
+.social-links a {
+  color: var(--text-light);
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+.social-links a:hover {
+  color: var(--primary-color);
+}
+
+.about-text {
+  flex-grow: 1;
+  max-width: none; /* Remove o max-width que estava centralizando demais */
+  margin: 0; /* Remove a margem auto */
+  padding-top: 10px; /* Alinha um pouco melhor com a foto */
+}
+
+/* ===== SKILLS (Sem alterações significativas) ===== */
 .skills {
   margin-top: 2rem;
 }
@@ -119,7 +169,7 @@ h2 {
   margin-bottom: 2rem;
 }
 .category h3 {
-  color: #38bdf8;
+  color: var(--primary-color);
   margin-bottom: 1rem;
   text-align: left;
 }
@@ -129,79 +179,165 @@ h2 {
   gap: 1rem;
 }
 .skill {
-  background: #1e293b;
+  background: var(--card-background);
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
   transition: transform 0.3s, background 0.3s;
+  /* Adiciona sombra sutil para destacar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .skill:hover {
   transform: translateY(-5px);
   background: #334155;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* ===== PROJETOS ===== */
+/* ===== PROJETOS (Com Imagem Preview) ===== */
 .projetos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
-.card {
-  background: #1e293b;
-  padding: 1.5rem;
-  border-radius: 12px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.2);
-}
-.card h3 {
-  margin-bottom: 0.5rem;
-  color: #38bdf8;
-}
-.card a {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: #38bdf8;
-  color: #0f172a;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-.card a:hover {
-  background: #0ea5e9;
+.project-card {
+  padding: 0; /* Remove o padding do card para a imagem ocupar a borda */
+  overflow: hidden; /* Garante que a imagem se ajuste ao border-radius */
+  display: flex;
+  flex-direction: column;
 }
 
-/* ===== CONTATO ===== */
+.project-preview {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 3px;
+  border-bottom: 3px solid var(--primary-color);
+  transition: transform 0.5s ease-in-out;
+}
+.project-card:hover .project-preview {
+  transform: scale(1.05); /* Zoom suave na imagem ao passar o mouse */
+}
+
+.card-info {
+  padding: 1.5rem;
+  flex-grow: 1; /* Faz o conteúdo esticar e manter o footer alinhado */
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+.card p {
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  margin: 10px 0 15px;
+}
+.tag {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.2);
+  color: var(--primary-color);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  margin-right: 5px;
+}
+
+/* Estilo para os botões dentro do card */
+.project-card a {
+  width: 90%;
+  border-radius: 2px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.project-card a.live-btn {
+  background: var(--primary-color);
+  color: var(--background-dark);
+}
+
+.project-card a:not(.live-btn) {
+  background: var(--card-background);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.project-card a:not(.live-btn):hover {
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.github-link-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 3px;
+  border: 2px dashed var(--primary-color); /* Destaque para o link geral */
+}
+
+/* ===== CONTATO (Melhoria de ícones) ===== */
 .contato {
   text-align: center;
 }
 .contato p {
-  margin: 0.5rem 0;
+  margin: 0.8rem 0;
+  font-size: 1.1rem;
+}
+.contato strong {
+  color: var(--primary-color);
 }
 .contato a {
   margin: 0 10px;
-  font-size: 1.2rem;
-  color: #38bdf8;
+  font-size: 1.1rem;
+  color: var(--primary-color);
   text-decoration: none;
+  transition: opacity 0.3s;
 }
 .contato a:hover {
-  text-decoration: underline;
+  opacity: 0.8;
+  text-decoration: none;
 }
 
-/* ===== FOOTER ===== */
+/* ===== FOOTER (Melhoria) ===== */
 footer {
-  background: #0f172a;
-  padding: 1rem;
+  background: var(--background-dark);
+  padding: 1.5rem;
   text-align: center;
   font-size: 0.9rem;
   border-top: 1px solid #1e293b;
 }
 
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+  /* Ajusta a seção "Sobre Mim" para empilhar em telas menores */
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+  .about-text {
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  header h1 {
+    margin-bottom: 10px;
+  }
+  nav a {
+    margin: 0 8px;
+    font-size: 0.9rem;
+  }
   .hero h2 {
     font-size: 2rem;
   }
