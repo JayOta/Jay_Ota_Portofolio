@@ -51,7 +51,7 @@ nav a:hover {
 
 /* ===== HERO (Sem alterações) ===== */
 .hero {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,7 +69,8 @@ nav a:hover {
   white-space: nowrap;
   overflow: hidden;
   width: 0;
-  animation: typing 4s steps(40, end) forwards,
+  animation:
+    typing 4s steps(40, end) forwards,
     blink 0.7s step-end infinite alternate;
 }
 @keyframes typing {
@@ -183,7 +184,9 @@ h2 {
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s, background 0.3s;
+  transition:
+    transform 0.3s,
+    background 0.3s;
   /* Adiciona sombra sutil para destacar */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
